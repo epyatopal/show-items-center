@@ -11,13 +11,10 @@ function addMargin(){
 
     $(".item").css("margin",margingWidthPersent + "%");
     $('#container').css("padding", margingWidthPersent + "%")
+
     if(itemWORowsCount != 0){
         var idForChangeMargin = allItemCount - itemWORowsCount + 1;
-        if(itemWORowsCount == 1){
-            var changeMargin = allWidth/2 - itemWidth/2 - margingWidthPixel*2;
-        } else {
-            var changeMargin = allWidth/2 - itemWidth - margingWidthPixel*2;
-        }
+        var changeMargin = ((itemCount - itemWORowsCount)/2)*itemWidth + margingWidthPixel*(1 + itemCount - itemWORowsCount);
         $('#'+idForChangeMargin).css('margin-left', changeMargin + "px")
     }
 }
